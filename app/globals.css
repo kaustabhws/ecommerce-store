@@ -2,26 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.hamburger, .ham-menu {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .hamburger {
+      display: block;
+  }
+
+  .ham-menu {
+    display: flex;
+  }
+
+  .main-nav {
+    display: none;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.ham-menu {
+  animation: slideHam 300ms alternate ease-in-out;
+}
+
+@keyframes slideHam {
+  0% {
+    left: -300px;
+  }
+  100% {
+    left: 0;
+  }
 }
