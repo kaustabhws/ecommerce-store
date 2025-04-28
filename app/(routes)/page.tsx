@@ -8,12 +8,12 @@ export const revalidate = 0;
 
 const HomePage = async () => {
   const products = await getProducts({ isFeatured: true });
-  const billboard = await getBillboard("12f50770-1962-410c-8fec-317ab56c06ba");
+  const billboard = await getBillboard("02e2fe04-6f39-4e01-a12f-dadd526bcead");
 
   return (
     <Container>
       <div className="space-y-10 pb-10">
-        <Billboard data={billboard} />
+        <Billboard data={billboard} textColor="white" />
 
         <div className="flex flex-col gap-y-8 px-4 sm:px-8 lg:px-8">
           <ProductList title="Featured Products" items={products} />
